@@ -185,10 +185,10 @@
 			<section>
 			<h3> Παράδειγμα Χωρικού Ερωτήματος σε γλώσσα SQL </h3>
 					<p align="left">
-					<b>SELECT</b> monument.name <br />
-					<b>FROM </b> city, monument <br />
-					<b>WHERE </b> ST_Contains(city.geom, monument.geom) <br />
-					<b>AND </b> city.name = 'Athens'; <br />
+					<strong>SELECT</strong> monument.name <br />
+					<strong>FROM</strong> city, monument <br />
+					<strong>WHERE</strong> ST_Contains(city.geom, monument.geom) <br />
+					<strong>AND</strong> city.name = 'Athens'; <br />
 					</p>	  	   		
 		  </section>
 			
@@ -210,21 +210,21 @@
 			<section>
 				<h3>Μερικές Βασικές Συναρτήσεις...</h3>
 				<p align="left"><ul>
-					<li>ST_Length(A): Υπολογισμός του μήκους της οντότητας Α</li>
-					<li>ST_Distance(A, B): Υπολογισμός της απόστασης των οντοτήτων Α και Β</li>
-					<li>ST_DWithin(A, B, r): Έλεγχος αν η οντότητα Β βρίσκεται σε απόσταση r από την οντότητα Α </li>
-					<li>ST_Area(A): Υπολογισμός εμβαδού της οντότητας Α</li>
-					<li>ST_Intersects(A, B): Υπολογισμός του κοινού χωρίου των οντοτήτων Α και Β</li>				
+					<li><strong>ST_Length(A)</strong>: Υπολογισμός του μήκους της οντότητας Α</li>
+					<li><strong>ST_Distance(A, B)</strong>: Υπολογισμός της απόστασης των οντοτήτων Α και Β</li>
+					<li><strong>ST_DWithin(A, B, r)</strong>: Έλεγχος αν η οντότητα Β βρίσκεται σε απόσταση r από την οντότητα Α </li>
+					<li><strong>ST_Area(A)</strong>: Υπολογισμός εμβαδού της οντότητας Α</li>
+					<li><strong>ST_Intersects(A, B)</strong>: Υπολογισμός του κοινού χωρίου των οντοτήτων Α και Β</li>				
 				</ul></p>	 
 			</section>
 
 			<section>
 				<h3>Αποκωδικοποίηση/Κωδικοποίηση Γεωμετριών </h3>
 				<p align="left"><ul>
-					<li>ST_AsText(A): Επιστρέφει τη γεωμετρία σε μορφή Well Known Text</li>
-					<li>ST_AsBinary(A): Επιστρέφει τη γεωμετρία σε μορφή Well Known Binary</li>
-					<li>ST_GeomFromText(str): Κατασκευάζει μια νέα γεωμετρία από Well Known Text</li>
-					<li>ST_GeomFromWKB(bin): Κατασκευάζει μια νέα γεωμετρία από Well Known Binary</li>
+					<li><strong>ST_AsText(A)</strong>: Επιστρέφει τη γεωμετρία σε μορφή Well Known Text</li>
+					<li><strong>ST_AsBinary(A)</strong>: Επιστρέφει τη γεωμετρία σε μορφή Well Known Binary</li>
+					<li><strong>ST_GeomFromWKB(bin)</strong>: Κατασκευάζει μια νέα γεωμετρία από Well Known Binary</li>
+					<li><strong>ST_GeomFromText(str)</strong>: Κατασκευάζει μια νέα γεωμετρία από Well Known Text</li>
 				</ul></p>
 			</section>
 			
@@ -242,25 +242,25 @@
 			<section>
 				<h3>Κατασκευαστές Γεωμετριών</h3>
 				<p align="left"><ul>
-					<li>ST_Buffer(A, r): Επιστρέφει μια γεωμετρία η οποία αναπαριστά όλα τα σημεία των οποίων η απόστασή τους από τη γεωμετρία είναι μικρότερη ή ίση της απόστασης r</li><br />	  	 		
-					<li>ST_MakeLine(point_array): Δημιουργεί μια γραμμή με κορυφές αυτές που ορίζονται στον πίνακα point_array </li><br />
-					<li>ST_BuildArea(A): Επιστρέφει ένα πολύγωνο με βάση τη δεδομένη γεωμετρία Α (απλή ή σύνθετη) </li><br />
-					<li>ST_Union(GSet): Συγχωνεύει τις γεωμετρίες που περιέχονται στο σύνολο γεωμετριών GSet παράγοντας μία καινούρια εννιαία γεωμετρία</li><br />
+					<li><strong>ST_Buffer(A, r)</strong>: Επιστρέφει μια γεωμετρία η οποία αναπαριστά όλα τα σημεία των οποίων η απόστασή τους από τη γεωμετρία είναι μικρότερη ή ίση της απόστασης r</li><br />	  	 		
+					<li><strong>ST_MakeLine(point_array)</strong>: Δημιουργεί μια γραμμή με κορυφές αυτές που ορίζονται στον πίνακα point_array </li><br />
+					<li><strong>ST_BuildArea(A)</strong>: Επιστρέφει ένα πολύγωνο με βάση τη δεδομένη γεωμετρία Α (απλή ή σύνθετη) </li><br />
+					<li><strong>ST_Union(GSet)</strong>: Συγχωνεύει τις γεωμετρίες που περιέχονται στο σύνολο γεωμετριών GSet παράγοντας μία καινούρια εννιαία γεωμετρία</li><br />
 				</ul></p><br /><br />
-				<p><small>ΣΗΜΕΙΩΣΗ: Πολλοί από αυτούς τους κατασκευαστες έχουν και εναλλακτικά ορίσματα</small></p>
+				<p><small>ΣΗΜΕΙΩΣΗ: Πολλοί από αυτούς τους κατασκευαστες δέχονται και εναλλακτικά ορίσματα</small></p>
 			</section>
 			
 			<section>
 				<h3>Παράδειγμα ST_MakeLine </h3>
-				<img src="images/st_makeline.png" width="80%" height="80%" alt="">
+				<img src="images/st_makeline.png" width="80%" alt="" />
 			</section>	
 			
 		<section>
 				<h3>Παράδειγμα ST_Union </h3>
 				<table>
 					<tr>
-						<td><img src="images/st_union_before.png" alt=""></td>
-						<td><img src="images/st_union_after.png"  alt=""></td>
+						<td><img src="images/st_union_before.png" width="90%" alt="" /></td>
+						<td><img src="images/st_union_after.png" width="90%" alt="" /></td>
 					</tr>
 				<td></td>
 				</table>
@@ -270,7 +270,7 @@
 			<section>		
 				<h3>Prepared Geometries</h3>
 				<p><ul>
-					<li>Πολλές φορές σε επεξεργασίες που αφορούν τομές και επικάλυψη πολυγώνων μία γεωμετρία συγκρίνεται πολλές φορές με άλλες γειτονικές της </li> <br />		
+					<li>Σε επεξεργασίες που αφορούν τομές ή/και επικαλύψεις μεταξύ πολυγώνων μία γεωμετρία συγκρίνεται πολλές φορές με άλλες γειτονικές της </li> <br />		
 					<li>Η PostGIS για να ελαττώσει το χρόνο υπολογισμού, προϋπολογίζει στοιχεία τα οποία σε άλλη περίπτωση θα υπολογιζόντουσαν πολλές φορές, μειώνοντας έτσι το χρόνο εκτέλεσης του ερωτήματος  </li>		
 				</ul></p>
 			</section>
@@ -283,24 +283,25 @@
 					<strong>FROM</strong> points, polygons<br />
 					<strong>WHERE</strong> ST_Intersects (polygons.geom,	points.geom)<br />	<br />
 				</p>
-				<img src="images/locatepointinpolygon.png" alt="">	
+				<img src="images/locatepointinpolygon.png" width="60%" alt="" />	
 			</section>		
 			
 			<section>
 			<h3>Γραμμικά συστήματα αναφοράς</h3>
 				<p align="left">
 				<ul>
-					<li>Σε εφαρμογές οδοποιίας είναι σημαντικό να ξέρουμε τη χιλιομετρική θέση ορισμένων αντικειμένων (πχ πινακίδες</li> <br />
+					<li>Σε εφαρμογές οδοποιίας είναι σημαντικό να ξέρουμε τη χιλιομετρική θέση ορισμένων αντικειμένων (πχ πινακίδες)</li> <br />
 					<li>Η PostGIS παρέχει μια πληθώρα συναρτήσεων που επιτρέπει την ανάπτυξη γραμμικών συστημάτων αναφοράς <br />
 				</ul>	
 				</p>		
 			<h3>Μερικές συναρτήσεις...</h3>				
 				<p align="left">
+				
 				<ul>
-				<li>ST_AddMeasure(line, start, end): Επιστρέφει μια γεωμετρία με στοιχεία τα οποία έχουν γραμμικά παρεμβληθεί ανάμεσα στην αρχή και το τέλος</li><br />
-					<li>ST_LocateBetween(geomA): Επιστρέφει ένα σύνολο γεωμετριών το οποίο έχει "αποκοπεί" από μια αρχική γεωμετρία  </li><br />
-					<li>ST_LocateAlong(Geom, measure, offset): Παρεμβάλει πάνω στη γεωμετρία Geom στη θέση measure και σε απόσταση offset ένα σημείο. Αν το offset είναι θετικό θα παρεμβληθεί στα αριστερά της γεωμετρίας ενώ αν είναι αρνητικό στα δεξιά </li><br />			
-					<li>ST_Line_locate_Point(line, point): Εντοπίζει την εγγύτερη απόσταση ενός σημείου σε μια ευθεία</li>				
+					<li><strong>ST_AddMeasure(line, start, end)</strong>: Επιστρέφει μια γεωμετρία με στοιχεία τα οποία έχουν γραμμικά παρεμβληθεί ανάμεσα στην αρχή και το τέλος</li>
+					<li><strong>ST_LocateBetween(line, a,b)</strong>: Αποκόπτει το τμήμα της γραμμής line από το measure a έως το b</li> 
+					<li><strong>ST_LocateAlong(Geom, measure, offset)</strong>: Παρεμβάλει πάνω στη γεωμετρία Geom στη θέση measure και σε απόσταση offset ένα σημείο. Αν το offset είναι θετικό θα παρεμβληθεί στα αριστερά της γεωμετρίας ενώ αν είναι αρνητικό στα δεξιά </li>		
+					<li><strong>ST_Line_locate_Point(line, point)</strong>: Εντοπίζει την προβολή ενός σημείου σε μια γραμμή ως ποσοστό της απόστασης της γραμμής</li>				
 				</ul>
 				</p>
 			</section> 	
@@ -309,8 +310,8 @@
 				<h3>Παραδείγματα Γραμμικών Συστημάτων Αναφοράς</h3>	
 				<table>
 				<tr>
-				<td><img src="images/st_locatealong.png" alt=""></td>
-				<td><img src="images/st_locatebetween.png" alt=""></td>				
+				<td><img src="images/st_locatealong.png" width="90%" alt="" /></td>
+				<td><img src="images/st_locatebetween.png" width="90%" alt="" /></td>				
 				</tr>				
 				</table>		
 			</section>
@@ -326,8 +327,8 @@
 				</ul><br /><br /><br />
 				<h4>Κατασκευαστές...</h4>
 				<ul>
-					<li>ST_CurveToLine(curveGeom): Μετατροπή καμπύλης σε γραμμή</li>
-					<li>ST_LineToCurve(line): Μετατροπή γραμμής σε καμπύλη</li>
+					<li><strong>ST_CurveToLine(curveGeom)</strong>: Μετατροπή καμπύλης σε γραμμή</li>
+					<li><strong>ST_LineToCurve(line)</strong>: Μετατροπή γραμμής σε καμπύλη</li>
 				</ul>				
 				</p>
 			</section>			
@@ -336,8 +337,8 @@
 				<h3>Παράδειγμα μετατροπής καμπύλης σε γραμμή και γραμμής σε καμπύλη</h3>	
 				<table>
 				<tr>
-				<td><img src="images/st_curvetoline.png" alt=""></td>
-				<td><img src="images/st_linetocurve.png" alt=""></td>				
+				<td><img src="images/st_curvetoline.png" width="90%" alt="" /></td>
+				<td><img src="images/st_linetocurve.png" width="90%" alt="" /></td>				
 				</tr>				
 				</table>		
 			</section>
@@ -346,8 +347,10 @@
 				<h3>Μετασχηματισμοί συντεταγμένων</h3>
 				<p align="center"><ul>				
 					<li>Στην επεξεργασία γεωχωρικών δεδομένων είναι σύνηθες να μετασχηματίζονται δεδομένα μεταξύ συστημάτων αναφοράς</li> <br />
-					<li>ST_Tranform(geom, SRID): Μετασχηματίζει τη δεδομένη γεωμετρία geom στο σύστημα αναφοράς που ορίζει ο κωδικός SRID</li> <br />
-					<li>SRID: Spatial Reference System Identifier</li> <br />				
+					<li><strong>ST_Tranform(geom, SRID)</strong>: Μετασχηματίζει τη δεδομένη γεωμετρία geom στο σύστημα αναφοράς που ορίζει ο κωδικός SRID</li><br />
+					<li>Προϋποθέτει πως η γεωμετρία geom έχει γνωστό προβολικό σύστημα(!)</li>
+					<br /><br />					
+					<small>SRID: Spatial Reference System Identifier</small> <br />				
 				</ul></p>
 			</section>
 			
@@ -376,11 +379,11 @@
 			
 			<section>
 			  <h3>Eισαγωγή δεδομένων στην PostGIS</h3><br />
-			  <h4>Από κονσόλα...</h4>
-			  <p><small>shp2pgsql -D -s 4326 -i countries.shp countries | psql -U userName -d geoDB</small></p><br />
+			  <h4>Από τερματικό...</h4>
+			  <p><small>shp2pgsql -D -s 4326 -i countries.shp countries | psql -U userName -d demodb</small></p><br />
 			  <h4>Από γραφικό περιβάλλον...</h4>
 			  <img src="images/importshp.png" alt="" />	<br />
-			  <p><small>Υποστηρίζεται εισαγωγή οποιονδήποτε διανυσματικών δεδομένων συμβατών με την OGR...</small></p>
+			  <p><small>Υποστηρίζεται εισαγωγή οποιονδήποτε διανυσματικών δεδομένων συμβατών με την GDAL/OGR...</small></p>
 			</section>
 			
 			<section>
@@ -403,9 +406,9 @@
 					<li>O φόρτος εργασίας αυξάνεται με την πολυπλοκότητα της γεωμετρίας (περισσότερα σημεία...)</li><br />
 					<li>H αναζήτηση με βάση ευρετήρια επιταγχύνει τους υπολογισμούς</li><br />
 					<li>Στηρίζεται στη σύγκριση των ελάχιστα περιγεγραμμένων τετραπλεύρων (bounding box) των γεωμετριών</li><br />
-					<li>Επιτρέπεται έτσι η επιλογή ή απόρριψη των γεωμετριών των οποίων τα ελάχιστα περιγεγραμμένα πολύγωνα συσχετίζονται ή όχι</li>				
+					<li>Eπιλογή ή απόρριψη των γεωμετριών των οποίων τα ελάχιστα περιγεγραμμένα τετράπλευρα συσχετίζονται ή όχι</li>				
 				</ul></p>				
-				<img src="images/gist.png" alt="">
+				<img src="images/gist.png" width="80%" alt="" />
 			</section>			
 			
 			<section>
@@ -417,7 +420,7 @@
 					<li><strong>ST_ConvexHull(raster)</strong>: Υπολογισμός του περιγράμματος της εικόνας, συμπεριλαμβανομένου και των τιμών nodata</li>				
 					<li><strong>ST_Polygon(raster)</strong>: Υπολογισμός του περιγράμματων των εικονοστοιχείων που έχουν τιμές</li>
 				</ul></p>
-				<img src="images/raster_postgis.png" alt="" />
+				<img src="images/raster_postgis.png" width="70%" alt="" />
 			</section>
 			
 			<section>
@@ -435,7 +438,7 @@
 				</ul>
 		
 				</p>
-				<img src="images/topology_postgis.png" alt="" /><br />
+				<img src="images/topology_postgis.png" width="35%" alt="" /><br />
 			</section>
 			
 			<section>
@@ -445,13 +448,16 @@
 					<li>Index-based αναζήτηση με χρήση K Nearest Neighbor</li>
 					<li>Έλεγχος ορθότητας των γεωμετριών</li>
 					<li>Τριγωνισμοί Delaunay</li>
-					<li>,,,,</li>				
+					<li>...</li>				
 				
 				</ul></p>
 			</section>			
 			
 			<section>
 				<h3>Πηγές...</h3>
+				<a href="http://www.postgresql.org/docs/">Επίσημο εγχειρίδιο PostgreSQL 9.3.4</a> <br /><br />
+				<a href="http://postgis.net/docs/manual-2.1/">Επίσημο εγχειρίδιο PostGIS 2.1</a><br /><br />
+				<a href="http://boundlessgeo.com/wp-content/uploads/2013/10/postgis-frenzy-foss4g-2013.pdf"> PostGIS Frenzy FOSS4G </a> <br /><br />
 				<a href="http://strk.keybit.net/projects/postgis/Paris2011_TopologyWithPostGIS_2_0.pdf" >Santro Santilli: Topology with PostGIS</a>
 			</section>		
 				
