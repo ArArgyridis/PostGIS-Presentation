@@ -17,15 +17,154 @@
     <div class="reveal">
       <div class="slides">
 	<section>
-		<h3>Εισαγωγή στο OSGeoLive και την PostGIS </h3>
-		<p><img src="images/postgresql_postgis.png" width="50%" alt="" />
-		<p>Παρουσίαση <br /> <br />
-		  <a href="http://users.ntua.gr/arargyr/">Αργυρός Αργυρίδης</a> <br /> 
-		  &amp  <br />
-		  <a href="http://users.ntua.gr/tzotsos/">Άγγελος Τζώτσος</a> 
-		  </p>
+		<h3>Εισαγωγή στην PostGIS </h3>
+		<p><img src="images/postgresql_postgis.png" alt=""></p>
+		<p>
+		<a href="http://users.ntua.gr/arargyr/">Αργυρός Αργυρίδης</a>, <a href="http://users.ntua.gr/tzotsos/">Άγγελος Τζώτσος</a><br /> 
+		<p>Μέλη OSGeo, Ερευνητές ΕΜΠ<br /> <br />
+   	    </p>
 	  </section>
-		  
+
+	  <section>
+		  <section>
+		        <h2>Οργανισμός Ελεύθερου Γεωχωρικού Λογισμικού (OSGeo)</h2>
+		        <p align="left">Από το 2006 υποστηρίζει:</p>
+		        <ul>
+		            <li>Το Ελεύθερο Γεωχωρικό Λογισμικό</li>
+		            <li>Την Εκπαίδευση</li>
+		            <li>Τα Ανοιχτά Δεδομένα</li>
+		        </ul>
+		        <br/>
+		        <table align="center" style="margin: 0px auto;">
+		        <tr>
+		        <td>
+		        <a class="image" href="http://osgeo.org" target="_blank">
+		            <!--img width="600" src="imgs/wordle.png"-->
+		            <img width="300" align="center" src="images/osgeo_compass.png" alt="OSGeo">
+		        </a>
+		        </td>
+		        </tr></table>
+		    </section> 
+
+		    <section>
+		        <h2>OSGeoLive</h2>
+		        <table align="center" style="margin: 0px auto;">
+		        <tr>
+		        <td style="vertical-align:middle">
+		        <a class="image" href="http://live.osgeo.org" target="_blank">
+		          <!--img width="600" src="imgs/wordle.png"-->
+		          <img width="500" align="center" src="images/osgeo-live.png">
+		        </a>
+		        </td>
+		        <td style="vertical-align:middle">
+		        <a class="image" href="http://kalxas.github.io/OSGeoLive-presentation/#/" target="_blank">
+		          <!--img width="600" src="imgs/wordle.png"-->
+		          <img width="400" align="center" src="images/osgeolive_menu.png">
+		        </a></td>
+		        </table>
+		        <ul>
+		          <li>Διανομή GNU/Linux</li>
+		          <li>60+ Ελεύθερα Γεωχωρικά Λογισμικά</li>
+		          <li>Δοκιμαστικά Ανοιχτά Δεδομένα</li>
+		          <li>Εγχειρίδια Χρήσης</li>
+		          <li>Μεταφρασμένο σε πολλές γλώσσες. Στα Ελληνικά από την Κοινότητα Ελεύθερου Λογισμικού ΕΜΠ και ΣΑΤΜ</li>
+		        </ul>
+		    </section>
+
+		    <section>
+                <h2>Λογισμικά OSGeoLive</h2>
+                <a class="image" href="http://live.osgeo.org" target="_blank">
+                  <!--img width="600" src="imgs/wordle.png"-->
+                  <img width="500" align="center" src="images/wordle.png">
+                </a>
+            </section>
+
+            <section>
+            <h2>Κριτήρια ποιότητας</h2>
+            <ul>
+              <li>Σταθερό, δοκιμασμένο λογισμικό</li>
+              <li>Πολύ ενεργή κοινότητα</li>
+            </ul>
+            <a class="image" href="http://live.osgeo.org/en/metrics.html" target="_blank">
+            <img width="600" src="images/metrics.png">
+            </a>
+            <aside class="notes">
+              <p>.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Desktop GIS</h2>
+            <br/>
+            <p><img src="images/desktopgis.png" width="700" alt="" /></p>
+          </section>
+
+          <section>
+            <h2>Browser Facing GIS</h2>
+            <br/>
+            <p><img src="images/webmapping.png" width="700" alt="" /></p>
+            <aside class="notes">
+              <p>.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Web Services</h2>
+            <br/>
+            <p><img src="images/webservices.png" width="900" alt="" /></p>
+            <aside class="notes">
+              <p>.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Data Stores</h2>
+            <br/>
+            <p><img src="images/databases.png" width="700" alt="" /></p>
+            <aside class="notes">
+              <p>At the bottom of the stack are the databases.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Navigation and Maps</h2>
+            <br/>
+            <br/>
+            <p><img src="images/navigation.png" width="500" alt="" /></p>
+            <aside class="notes">
+              <p>.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Spatial Tools</h2>
+            <br/>
+            <p><img src="images/spatialtools.png" width="700" alt="" /></p>
+            <aside class="notes">
+              <p>.</p>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Domain Specific GIS</h2>
+            <br/>
+            <p><img src="images/domaingis.png" width="500" alt="" /></p>
+            <aside class="notes">
+              .
+            </aside>
+          </section>
+
+          <section>
+            <h2>Geospatial Libraries</h2>
+            <br/>
+            <br/>
+            <p><img src="images/libraries.png" width="600" alt="" /></p>
+            <aside class="notes">
+              <p>We will now look at key libraries which have shown a level of quality by going through the OSGeo Incubation process.</p>
+            </aside>
+          </section>
+
+		</section>
 		  <section>	  	   
 			<h3> Διαδεδομένες χωρικές βάσεις δεδομένων </h3>
 				<p align="left"><ul>
@@ -33,12 +172,17 @@
 						<li>Oracle Spatial</li>
 						<li>Microsoft SQL Server 2008 </li>	  	   		
 				</ul></p><br />
+			</section>
+			<section>	
 				<h3>PostGIS (;)</h3>	  	   
 				<p><ul>
 				<li>H PostGIS αποτελεί επέκταση της PostgreSQL</li> <br />
 				<li>Προσθέτει υποστήριξη για γεωγραφικά αντικείμενα, επιτρέποντας την εκτέλεση χωρικών ερωτημάτων σε γλώσσα SQL </li>
 				</ul></p>
 				<br /> <br />
+			</section>
+
+			<section>
 			<h3> Παράδειγμα Χωρικού Ερωτήματος σε γλώσσα SQL </h3>
 					<p align="left">
 					<strong>SELECT</strong> monument.name <br />
