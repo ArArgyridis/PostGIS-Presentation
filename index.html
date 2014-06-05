@@ -126,7 +126,7 @@
 			<section>		
 				<h3>Prepared Geometries</h3>
 				<p><ul>
-					<li>Πολλές φορές σε επεξεργασίες που αφορούν τομές και επικάλυψη πολυγώνων μία γεωμετρία συγκρίνεται πολλές φορές με άλλες γειτονικές της </li> <br />		
+					<li>Σε επεξεργασίες που αφορούν τομές ή/και επικαλύψεις μεταξύ πολυγώνων μία γεωμετρία συγκρίνεται πολλές φορές με άλλες γειτονικές της </li> <br />		
 					<li>Η PostGIS για να ελαττώσει το χρόνο υπολογισμού, προϋπολογίζει στοιχεία τα οποία σε άλλη περίπτωση θα υπολογιζόντουσαν πολλές φορές, μειώνοντας έτσι το χρόνο εκτέλεσης του ερωτήματος  </li>		
 				</ul></p>
 			</section>
@@ -146,7 +146,7 @@
 			<h3>Γραμμικά συστήματα αναφοράς</h3>
 				<p align="left">
 				<ul>
-					<li>Σε εφαρμογές οδοποιίας είναι σημαντικό να ξέρουμε τη χιλιομετρική θέση ορισμένων αντικειμένων (πχ πινακίδες</li> <br />
+					<li>Σε εφαρμογές οδοποιίας είναι σημαντικό να ξέρουμε τη χιλιομετρική θέση ορισμένων αντικειμένων (πχ πινακίδες)</li> <br />
 					<li>Η PostGIS παρέχει μια πληθώρα συναρτήσεων που επιτρέπει την ανάπτυξη γραμμικών συστημάτων αναφοράς <br />
 				</ul>	
 				</p>		
@@ -154,8 +154,9 @@
 				<p align="left">
 				
 				<ul>
-					<li><strong>ST_AddMeasure(line, start, end)</strong>: Επιστρέφει μια γεωμετρία με στοιχεία τα οποία έχουν γραμμικά παρεμβληθεί ανάμεσα στην αρχή και το τέλος</li><br />
-					<li><strong>ST_LocateAlong(Geom, measure, offset)</strong>: Παρεμβάλει πάνω στη γεωμετρία Geom στη θέση measure και σε απόσταση offset ένα σημείο. Αν το offset είναι θετικό θα παρεμβληθεί στα αριστερά της γεωμετρίας ενώ αν είναι αρνητικό στα δεξιά </li><br />			
+					<li><strong>ST_AddMeasure(line, start, end)</strong>: Επιστρέφει μια γεωμετρία με στοιχεία τα οποία έχουν γραμμικά παρεμβληθεί ανάμεσα στην αρχή και το τέλος</li>
+					<li><strong>ST_LocateBetween(line, a,b)</strong>: Αποκόπτει το τμήμα της γραμμής line από το measure a έως το b</li> 
+					<li><strong>ST_LocateAlong(Geom, measure, offset)</strong>: Παρεμβάλει πάνω στη γεωμετρία Geom στη θέση measure και σε απόσταση offset ένα σημείο. Αν το offset είναι θετικό θα παρεμβληθεί στα αριστερά της γεωμετρίας ενώ αν είναι αρνητικό στα δεξιά </li>		
 					<li><strong>ST_Line_locate_Point(line, point)</strong>: Εντοπίζει την προβολή ενός σημείου σε μια γραμμή ως ποσοστό της απόστασης της γραμμής</li>				
 				</ul>
 				</p>
@@ -202,7 +203,8 @@
 				<h3>Μετασχηματισμοί συντεταγμένων</h3>
 				<p align="center"><ul>				
 					<li>Στην επεξεργασία γεωχωρικών δεδομένων είναι σύνηθες να μετασχηματίζονται δεδομένα μεταξύ συστημάτων αναφοράς</li> <br />
-					<li><strong>ST_Tranform(geom, SRID)</strong>: Μετασχηματίζει τη δεδομένη γεωμετρία geom στο σύστημα αναφοράς που ορίζει ο κωδικός SRID</li> <br />
+					<li><strong>ST_Tranform(geom, SRID)</strong>: Μετασχηματίζει τη δεδομένη γεωμετρία geom στο σύστημα αναφοράς που ορίζει ο κωδικός SRID</li><br />
+					<li>Προϋποθέτει πως η γεωμετρία geom έχει γνωστό προβολικό σύστημα(!)</li>
 					<br /><br />					
 					<small>SRID: Spatial Reference System Identifier</small> <br />				
 				</ul></p>
@@ -237,7 +239,7 @@
 			  <p><small>shp2pgsql -D -s 4326 -i countries.shp countries | psql -U userName -d demodb</small></p><br />
 			  <h4>Από γραφικό περιβάλλον...</h4>
 			  <img src="images/importshp.png" alt="" />	<br />
-			  <p><small>Υποστηρίζεται εισαγωγή οποιονδήποτε διανυσματικών δεδομένων συμβατών με την OGR...</small></p>
+			  <p><small>Υποστηρίζεται εισαγωγή οποιονδήποτε διανυσματικών δεδομένων συμβατών με την GDAL/OGR...</small></p>
 			</section>
 			
 			<section>
@@ -309,6 +311,9 @@
 			
 			<section>
 				<h3>Πηγές...</h3>
+				<a href="http://www.postgresql.org/docs/">Επίσημο εγχειρίδιο PostgreSQL 9.3.4</a> <br /><br />
+				<a href="http://postgis.net/docs/manual-2.1/">Επίσημο εγχειρίδιο PostGIS 2.1</a><br /><br />
+				<a href="http://boundlessgeo.com/wp-content/uploads/2013/10/postgis-frenzy-foss4g-2013.pdf"> PostGIS Frenzy FOSS4G </a> <br /><br />
 				<a href="http://strk.keybit.net/projects/postgis/Paris2011_TopologyWithPostGIS_2_0.pdf" >Santro Santilli: Topology with PostGIS</a>
 			</section>		
 				
