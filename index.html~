@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PostGIS 2.1 Presentation</title>
+    <meta name="description" content="A FOSS Spatial Database">
+    <meta name="author" content="Argyros Argyridis" >
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/osgeo.css" id="theme">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+         <h3>Εισαγωγή στο OSGeoLive και την PostGIS </h3>
+         <p><img src="images/postgresql_postgis.png" alt="">
+         <p>Παρουσίαση <br /> <br />
+		   <a href="http://users.ntua.gr/arargyr/">Αργυρός Αργυρίδης</a> <br /> 
+	  	   & <br />
+	  	   <a href="http://users.ntua.gr/tzotsos/">Άγγελος Τζώτσος</a> 
+	  	   </p>
+	  	   </section>
+	  	   
+	  	   <section>	  	   
+	  	   	<h3> Διαδεδομένες χωρικές βάσεις δεδομένων </h3>
+	  	   		<p align="left"><ul>
+						<li>PostGIS</li>
+						<li>Oracle Spatial</li>
+						<li>Microsoft SQL Server 2008 </li>	  	   		
+	  	   		</ul></p><br />
+				<h3>PostGIS (;)</h3>	  	   
+	  	   		<p><ul>
+	  	   		<li>H PostGIS αποτελεί επέκταση της PostgreSQL</li> <br />
+	  	   		<li>Προσθέτει υποστήριξη για γεωγραφικά αντικείμενα, επιτρέποντας την εκτέλεση χωρικών ερωτημάτων σε γλώσσα SQL </li>
+	  	   		</ul></p>
+	  	   		<br /> <br />
+	  	   	<h3> Παράδειγμα Χωρικού Ερωτήματος σε γλώσσα SQL </h3>
+					<p align="left">
+					<b>SELECT</b> monument.name <br />
+					<b>FROM </b> city, monument <br />
+					<b>WHERE </b> ST_Contains(city.geom, monument.geom) <br />
+					<b>AND </b> city.name = 'Athens'; <br />
+					</p>	  	   		
+	  	   </section>
+	  	   	
+	  	 	<section>
+	  	 		<h3>Εταιρείες και Λογισμικά που υποστηρίζουν την PostGIS </h3>
+	  	 			<ul>
+						<li>ESRI</li>
+						<li>Google</li>
+						<li>INTERGRAPH</li>						
+						<li>MapInfo</li>
+						<li>GeoServer</li>
+						<li>GDAL</li>
+						<li>GRASS GIS</li>
+						<li>Quantum GIS</li>
+						<li>...</li>	  	 			
+	  	 			</ul>
+	  	 	</section>
+	  	 	
+	  	 	<section>
+				<h3>Μερικές Βασικές Συναρτήσεις...</h3>
+				<p align="left"><ul>
+					<li>ST_Length(A): Υπολογισμός του μήκους της οντότητας Α</li>
+					<li>ST_Distance(A, B): Υπολογισμός της απόστασης των οντοτήτων Α και Β</li>
+					<li>ST_DWithin(A, B, r): Έλεγχος αν η οντότητα Β βρίσκεται σε απόσταση r από την οντότητα Α </li>
+					<li>ST_Area(A): Υπολογισμός εμβαδού της οντότητας Α</li>
+					<li>ST_Intersects(A, B): Υπολογισμός του κοινού χωρίου των οντοτήτων Α και Β</li>				
+				</ul></p>	 
+	  	 	</section>
+
+	  	 	<section>
+	  	 		<h3>Αποκωδικοποίηση/Κωδικοποίηση Γεωμετριών </h3>
+	  	 		<p align="left"><ul>
+	  	 			<li>ST_AsText(A): Επιστρέφει τη γεωμετρία σε μορφή Well Known Text</li>
+	  	 			<li>ST_AsBinary(A): Επιστρέφει τη γεωμετρία σε μορφή Well Known Binary</li>
+	  	 			<li>ST_GeomFromText(str): Κατασκευάζει μια νέα γεωμετρία από Well Known Text</li>
+	  	 			<li>ST_GeomFromWKB(bin): Κατασκευάζει μια νέα γεωμετρία από Well Known Binary</li>
+	  	 		</ul></p>
+	  	 	</section>
+	  	 	
+	  	 	<section>
+	  	 		<h3> Μετατροπή μεταξύ διάφορων τύπων κωδικοποιήσεων </h3>
+	  	 		<p align="left"><ul>
+					<li>ST_AsGeoJSON()</li>
+					<li>ST_AsGML()</li>
+					<li>ST_AsKML()</li>
+					<li>ST_GeomFromGML()</li>
+					<li>ST_GeomFromKML()</li>	  	 		
+	  	 		</ul></p>
+	  	 	</section>
+	  	 	
+	  	 	<section>
+	  	 		<h3>Κατασκευαστές Γεωμετριών</h3>
+	  	 		<p align="left"><ul>
+					<li>ST_Buffer(A, r): Επιστρέφει μια γεωμετρία η οποία αναπαριστά όλα τα σημεία των οποίων η απόστασή τους από τη γεωμετρία είναι μικρότερη ή ίση της απόστασης r</li><br />	  	 		
+	  	 			<li>ST_MakeLine(point_array): Δημιουργεί μια γραμμή με κορυφές αυτές που ορίζονται στον πίνακα point_array </li><br />
+	  	 			<li>ST_BuildArea(A): Επιστρέφει ένα πολύγωνο με βάση τη δεδομένη γεωμετρία Α (απλή ή σύνθετη) </li><br />
+	  	 			<li>ST_Union(GSet): Συγχωνεύει τις γεωμετρίες που περιέχονται στο σύνολο γεωμετριών GSet παράγοντας μία καινούρια εννιαία γεωμετρία</li><br />
+	  	 		</ul></p><br /><br />
+	  	 		<p><small>ΣΗΜΕΙΩΣΗ: Πολλοί από αυτούς τους κατασκευαστες έχουν και εναλλακτικά ορίσματα</small></p>
+	  	 	</section>
+	  	 	
+	  	 	<section>
+	  	 		<h3>Παράδειγμα ST_MakeLine </h3>
+	  	 		<img src="images/st_makeline.png" width="80%" height="80%" alt="">
+			</section>	
+			 
+    	 	<section>
+	  	 		<h3>Παράδειγμα ST_Union </h3>
+	  	 		<table>
+	  	 			<tr>
+	  	 				<td><img src="images/st_union_before.png" alt=""></td>
+	  	 				<td><img src="images/st_union_after.png"  alt=""></td>
+	  	 			</tr>
+	  	 		<td></td>
+	  	 		</table>
+	  	 		
+			</section>
+			
+			<section>		
+				<h3>Prepared Geometries</h3>
+				<p><ul>
+					<li>Πολλές φορές σε επεξεργασίες που αφορούν τομές και επικάλυψη πολυγώνων μία γεωμετρία συγκρίνεται πολλές φορές με άλλες γειτονικές της </li> <br />		
+					<li>Η PostGIS για να ελαττώσει το χρόνο υπολογισμού, προϋπολογίζει στοιχεία τα οποία σε άλλη περίπτωση θα υπολογιζόντουσαν πολλές φορές, μειώνοντας έτσι το χρόνο εκτέλεσης του ερωτήματος  </li>		
+				</ul></p>
+			</section>
+			
+			<section>
+			
+			   <h3><p>Εύρεση σημείων εντός δεδομένων πολυγώνων</p></h3> 
+			   	SELECT ... <br />
+					FROM points, polygons<br />
+					WHERE ST_Intersects (<br />
+					polygons.geom,<br />
+					points.geom<br />		
+					
+					<img src="images/locatepointinpolygon.png" alt="">
+				<table>
+					<tr>
+						<td>
+						
+						</td>	
+						<td>
+							
+						</td>				
+					</tr>				
+				</table>
+				<p align="left">
+				
+
+				)				
+				</p>
+			</section>		
+			
+			<section>
+			<h3>Γραμμικά συστήματα αναφοράς</h3>
+				<p align="left">
+				<ul>
+					<li>Σε εφαρμογές οδοποιίας είναι σημαντικό να ξέρουμε τη χιλιομετρική θέση ορισμένων αντικειμένων (πχ πινακίδες</li> <br />
+					<li>Η PostGIS παρέχει μια πληθώρα συναρτήσεων που επιτρέπει την ανάπτυξη γραμμικών συστημάτων αναφοράς <br />
+				</ul>	
+				</p>		
+			<h3>Μερικές συναρτήσεις...</h3>				
+				<p align="left">
+				<ul>
+				<li>ST_AddMeasure(line, start, end): Επιστρέφει μια γεωμετρία με στοιχεία τα οποία έχουν γραμμικά παρεμβληθεί ανάμεσα στην αρχή και το τέλος</li><br />
+					<li>ST_LocateBetween(geomA): Επιστρέφει ένα σύνολο γεωμετριών το οποίο έχει "αποκοπεί" από μια αρχική γεωμετρία  </li><br />
+					<li>ST_LocateAlong(Geom, measure, offset): Παρεμβάλει πάνω στη γεωμετρία Geom στη θέση measure και σε απόσταση offset ένα σημείο. Αν το offset είναι θετικό θα παρεμβληθεί στα αριστερά της γεωμετρίας ενώ αν είναι αρνητικό στα δεξιά </li><br />			
+					<li>ST_Line_locate_Point(line, point): Εντοπίζει την εγγύτερη απόσταση ενός σημείου σε μια ευθεία</li>				
+				</ul>
+				</p>
+			</section> 	
+						
+			<section>
+				<h3>Παραδείγματα Γραμμικών Συστημάτων Αναφοράς</h3>	
+				<table>
+				<tr>
+				<td><img src="images/st_locatealong.png" alt=""></td>
+				<td><img src="images/st_locatebetween.png" alt=""></td>				
+				</tr>				
+				</table>		
+			</section>
+			
+			<section>
+				<h3>Καμπύλες...</h3>
+				<h4>Μερικοί τύποι δεδομένων</h4>
+				<p align="left"><ul>
+					<li>Curvestring</li>				
+					<li>Compoundcurve</li>
+					<li>Curvepolygon</li>
+					
+				</ul><br /><br /><br />
+				<h4>Κατασκευαστές...</h4>
+				<ul>
+					<li>ST_CurveToLine(curveGeom): Μετατροπή καμπύλης σε γραμμή</li>
+					<li>ST_LineToCurve(line): Μετατροπή γραμμής σε καμπύλη</li>
+				</ul>				
+				</p>
+			</section>			
+
+			<section>
+				<h3>Παράδειγμα μετατροπής καμπύλης σε γραμμή και γραμμής σε καμπύλη</h3>	
+				<table>
+				<tr>
+				<td><img src="images/st_curvetoline.png" alt=""></td>
+				<td><img src="images/st_linetocurve.png" alt=""></td>				
+				</tr>				
+				</table>		
+			</section>
+						 	
+      </div>
+      <!-- Any section element inside of this container is displayed as a slide --> 
+    </div>
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.min.js"></script>
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+      
+          theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+          transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      
+          // Optional libraries used to extend on reveal.js
+          dependencies: [
+              { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+              { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+              // { src: 'reveal.js/plugin/leap/leap.js', async: true }
+              // { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+              // { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+          ]
+      });
+      
+    </script>
+  </body>
+</html>
